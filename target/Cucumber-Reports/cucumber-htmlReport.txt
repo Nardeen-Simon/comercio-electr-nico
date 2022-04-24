@@ -1,0 +1,85 @@
+
+@smoke
+Scenario: User could register with valid data                      # src/main/resources/features/F01_Registration.feature:3
+  Given user is in site page then click register button            # stepDefinations.SD1_RegistrationStepDefinitions.user_is_in_site_page()
+  When user enters First name and Last name and Email and Password # stepDefinations.SD1_RegistrationStepDefinitions.enter_user_data()
+  And click on register button                                     # stepDefinations.SD1_RegistrationStepDefinitions.click_on_register_button()
+  Then user is navigated to the registration welcome page          # stepDefinations.SD1_RegistrationStepDefinitions.navigated_to_the_welcome_page()
+
+@smoke
+Scenario: switch between currencies US-Euro         # src/main/resources/features/F02_Switch_US_Euro.feature:3
+  When user could switch between currencies US-Euro # stepDefinations.SD2_SwitchCurrencyStepDefinition.hover_the_euro_button_and_click()
+  Then Assert currencies is switched                # stepDefinations.SD2_SwitchCurrencyStepDefinition.Assert_currencies_is_switched()
+
+@smoke
+Scenario: user could search for any product with fullname # src/main/resources/features/F03_Search.feature:3
+  And user click on search field                          # stepDefinations.SD3_SearchStepDefinitions.click_on_search_field()
+  When user search with product full name                 # stepDefinations.SD3_SearchStepDefinitions.search_with_product_fullname()
+  And press search button                                 # stepDefinations.SD3_SearchStepDefinitions.press_search()
+  Then user could find relative results                   # stepDefinations.SD3_SearchStepDefinitions.user_find_relative_results()
+  And choose the searched item                            # stepDefinations.SD3_SearchStepDefinitions.choose_the_searched_item()
+
+@smoke
+Scenario: Logged user could select random category then hover and open sub-Category if found # src/main/resources/features/F04_SelectCategory.feature:3
+  Given user select random category and hover it                                             # stepDefinations.SD4_SelectCategoryStepDefinition.user_select_random_category()
+  Then open sub-Category if found                                                            # stepDefinations.SD4_SelectCategoryStepDefinition.open_sub_Category_if_found()
+
+@smoke
+Scenario: should select specific category like Apparel > Shoes* then user could filter with color # src/main/resources/features/F05_filterWithColor.feature:3
+  When user select specific category                                                              # stepDefinations.SD5_FilterStepDefinitions.user_select_specific_category()
+  Then user could filter category with color                                                      # stepDefinations.SD5_FilterStepDefinitions.user_could_filter_category_with_color()
+
+@smoke
+Scenario: Logged user could select awesome tag         # src/main/resources/features/F06_SelectDifferentTags.feature:3
+  When user select camera tag                          # stepDefinations.SD6_SelectTagsStepDefinitions.user_camera_tage()
+  Then user could find relative results of camera tag  # stepDefinations.SD6_SelectTagsStepDefinitions.user_could_find_relative_results_of_camera_tag()
+  And user select awesome tag                          # stepDefinations.SD6_SelectTagsStepDefinitions.user_select_tage()
+  Then user could find relative results of awesome tag # stepDefinations.SD6_SelectTagsStepDefinitions.user_could_find_relative_results_of_awesome_tag()
+  And log out                                          # stepDefinations.SD6_SelectTagsStepDefinitions.logged_out()
+
+@smoke
+Scenario: User could reset his/her password successfully                                   # src/main/resources/features/F07_ResetPassword.feature:3
+  Given Navigate to Login Page                                                             # stepDefinations.SD7_ResetPassStepDefinitions.navigate_to_login_page()
+  And Click on forget password? button                                                     # stepDefinations.SD7_ResetPassStepDefinitions.click_on_forget_password_button()
+  When user enter Email                                                                    # stepDefinations.SD7_ResetPassStepDefinitions.user_enter_his_her_email()
+  Then message is displayed "Email with instructions has been sent to you." will displayed # stepDefinations.SD7_ResetPassStepDefinitions.message_is_displayed_will_displayed(java.lang.String)
+
+@smoke
+Scenario: check login is successful with valid credentials # src/main/resources/features/F08_login.feature:3
+  Given user click on login button                         # stepDefinations.SD8_LoginStepDefinitions.user_is_in_login_page()
+  When user enters username and password                   # stepDefinations.SD8_LoginStepDefinitions.user_enters_username_and_password()
+  Then user is navigated to the home page                  # stepDefinations.SD8_LoginStepDefinitions.user_is_navigated_to_the_home_page()
+
+@smoke
+Scenario: Logged user could add different products to Wishlist # src/main/resources/features/F09_Wishlist.feature:3
+  Given User Choose The Digital Downloads Category             # stepDefinations.SD10_AddToWishListStepDefinitions.user_choose_the_digital_downloads_category()
+  And Click on Digital item add to Wishlist button             # stepDefinations.SD10_AddToWishListStepDefinitions.click_on_digital_item_add_to_wishlist_button()
+  Then Digital item added to the Wishlist                      # stepDefinations.SD10_AddToWishListStepDefinitions.digital_item_added_to_the_wishlist()
+
+@smoke
+Scenario: Logged user could add different products to compare list # src/main/resources/features/F10_CompareList.feature:3
+  When Click on Digital item add to CompareList button             # stepDefinations.SD11_AddToCompareListStepDefinitions.Click_on_Digital_item_add_to_CompareList_button()
+  Then Digital item added to the CompareList                       # stepDefinations.SD11_AddToCompareListStepDefinitions.Digital_item_added_to_the_CompareList()
+  When click on another Digital item add to CompareList button     # stepDefinations.SD11_AddToCompareListStepDefinitions.click_on_another_Digital_item_add_cart_button()
+  Then another Digital item added to the CompareList               # stepDefinations.SD11_AddToCompareListStepDefinitions.another_Digital_item_added_to_the_CompareList()
+
+@smoke
+Scenario: Logged user could add different products to Shopping cart # src/main/resources/features/F11_ShoppingCart.feature:3
+  When When user choose the books category                          # stepDefinations.SD9_AddToCartStepDefinitions.user_choose_books_the_category()
+  And click on book item add to cart button                         # stepDefinations.SD9_AddToCartStepDefinitions.click_on_book_add_to_cart_button()
+  Then book added to the shopping cart                              # stepDefinations.SD9_AddToCartStepDefinitions.product_book_added_to_the_shopping_cart()
+  When click on another book item add to cart button                # stepDefinations.SD9_AddToCartStepDefinitions.click_on_another_book_add_to_cart_button()
+  Then another book added to the shopping cart                      # stepDefinations.SD9_AddToCartStepDefinitions.another_book_added_to_the_shopping_cart()
+
+@smoke
+Scenario: Create successful Order                   # src/main/resources/features/F12_SuccessfulOrder.feature:3
+  And check the shopping cart                       # stepDefinations.SD12_SuccessfulOrderStepDefinitions.check_the_shopping_cart()
+  And select gift wrapping needed                   # stepDefinations.SD12_SuccessfulOrderStepDefinitions.select_gift_wrapping_needed()
+  And click on terms agreement                      # stepDefinations.SD12_SuccessfulOrderStepDefinitions.click_on_terms_agreement()
+  And Click on checkout button                      # stepDefinations.SD12_SuccessfulOrderStepDefinitions.click_on_checkout_button()
+  Then Entering Bill information and press continue # stepDefinations.SD12_SuccessfulOrderStepDefinitions.entering_bill_information_and_press_continue()
+  And Shipping method and press continue            # stepDefinations.SD12_SuccessfulOrderStepDefinitions.Shipping_method_and_press_continue()
+  And Payment method and press continue             # stepDefinations.SD12_SuccessfulOrderStepDefinitions.Payment_method_and_press_continue()
+  And Payment information and press continue        # stepDefinations.SD12_SuccessfulOrderStepDefinitions.Payment_information_and_press_continue()
+  And Confirm order                                 # stepDefinations.SD12_SuccessfulOrderStepDefinitions.confirm_order()
+  Then show invoice details and print the Details   # stepDefinations.SD12_SuccessfulOrderStepDefinitions.show_invoice_details()
