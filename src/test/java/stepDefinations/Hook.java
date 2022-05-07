@@ -1,5 +1,6 @@
 package stepDefinations;
 
+import Utilities.BrowserUtils;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
@@ -20,16 +21,20 @@ public class Hook {
         //2-New object of webDriver
         driver= new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-        Thread.sleep(3000);
+        BrowserUtils.waitFor(3);
+        //hread.sleep(3000);
         driver.manage().window().maximize();
-        Thread.sleep(3000);
+        BrowserUtils.waitFor(3);
+        //Thread.sleep(3000);
         driver.navigate().to("https://demo.nopcommerce.com/");
-        Thread.sleep(6000);
+        BrowserUtils.waitFor(3);
+        //Thread.sleep(6000);
     }
 
     @AfterAll
     public static void closeBrowser() throws InterruptedException {
-        Thread.sleep(3000);
+        BrowserUtils.waitFor(3);
+        //Thread.sleep(3000);
         driver.close();
         driver.quit();
     }

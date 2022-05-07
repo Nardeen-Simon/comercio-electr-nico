@@ -13,7 +13,9 @@ import org.junit.runner.RunWith;
         monochrome = true,
         plugin={"pretty:target/Cucumber-Reports/cucumber-htmlReport.txt",
                 "json:target/Cucumber-Reports/cucumber-jsonReport.json",
-                "html:target/Cucumber-Reports/cucumber-petty.html"
+                "html:target/Cucumber-Reports/cucumber-petty.html",
+                "junit:target/cukes.xml",
+                "rerun:target/rerun.txt"
         })
  public class TestRunner extends AbstractTestNGCucumberTests{
 }
