@@ -2,7 +2,7 @@
 <h1 align="center">Hi 👋, I'm Nardeen Simon</h1>
 <h3 align="center">A junior Software tester</h3>
 
-- 🔭 I’m currently working on **E-commerce website Automation testinh**
+- 🔭 I’m currently working on **E-commerce website Automation testing**
 
 - 🌱 I’m currently learning **Cucumber, testng**
 
